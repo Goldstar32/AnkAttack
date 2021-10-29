@@ -1,9 +1,10 @@
 var app = new Vue({
     el: '#app',
     data: {
-        duckX: 0,
-        duckY: 0,
-        ducksShot: 0,
+        duckX: -70,
+        duckY: -70,
+        ducksShot: -1,
+        scene: "menu",
     },
 
     mounted() {
@@ -18,6 +19,22 @@ var app = new Vue({
 
     methods: {
 
+        setScene(scene) {
+            this.scene = scene
+        },
+
+        startGame() {
+            this.setScene("gameInProgress")
+            setTimeout(() => this.rndDuckPos(), 100)
+        },
+
+        backToMenu() {
+            if (this.ducksShot === 32) {
+                this.scene = "menu"
+                this.ducksShot = -1
+            }
+        },
+
         rndDuckPos() {
             var screenWitdth = this.$refs.duckContainer.clientWidth;
             var screenHeight = this.$refs.duckContainer.clientHeight;
@@ -31,6 +48,7 @@ var app = new Vue({
             this.duckX = x
             this.duckY = y
             this.ducksShot += 1
+            this.backToMenu()
         },
 
         getRndInteger(min, max) {
