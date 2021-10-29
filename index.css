@@ -1,5 +1,12 @@
 .duck {
     position: fixed;
-    /* left: 0px;
-    top: 0px; */
+}
+
+.title {
+    font-size: 100px;
+}
+
+.center {
+    position: relative;
+    text-align: center;
 }

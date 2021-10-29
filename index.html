@@ -6,7 +6,10 @@
     </head> 
     <body>
         <div id="app">
-            <label class="duck" :style="duckPositionStyle" @click="rndDuckPos()">Anka</label>
+            <img src="https://www.pngkey.com/png/full/96-966968_rubber-duck-png-image-transparent-rubber-duck-png.png" alt="Anka" width="140" height="140" class="duck" :style="duckPositionStyle" @click="rndDuckPos()"></img>
+            <div class="center">
+                <label class="title">{{ ducksShot }}</label>
+            </div>
         </div>
         <script src="index.js"></script>
     </body>

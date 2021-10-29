@@ -3,6 +3,7 @@ var app = new Vue({
     data: {
         duckX: 300,
         duckY: 300,
+        ducksShot: 0,
     },
 
     mounted() {
@@ -18,11 +19,11 @@ var app = new Vue({
     methods: {
 
         rndDuckPos() {
-            console.log('dsd')
             var x = this.getRndInteger(300, 500)
             var y = this.getRndInteger(300, 500)
             this.duckX = x
             this.duckY = y
+            this.ducksShot += 1
         },
 
         getRndInteger(min, max) {
