@@ -1,12 +1,25 @@
+body {
+    margin: 0;
+}
+
+.duckContainer {
+    position: relative;
+    border: solid 2px red;
+    height: 596px;
+}
+
 .duck {
-    position: fixed;
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    transform: translate(-50%, -50%);
 }
 
 .title {
     font-size: 100px;
+    position: absolute;
 }
 
 .center {
-    position: relative;
     text-align: center;
 }
